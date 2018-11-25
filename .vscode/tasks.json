@@ -1,0 +1,25 @@
+{
+    // configuration of tasks, e.g. a build task
+    //
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build pacpp",                  // name of this build instruction
+            "type":"shell",
+            "command": "c++ -g pa.cpp -o pacpp",   // build command
+            // c++ or g++ can compile c++ code; gcc can only compile c code
+            // -g builds the debug symbols
+            // -o defines name of output file
+
+            "group":                                // set this build task as default --> can be run from main menu or with Ctrl+SHIFT+b
+            {
+                "kind": "build",
+                "isDefault": true
+            },
+
+            "problemMatcher":"$gcc",                // use "problems" tab for warnings and errors instead of pure gcc output in terminal
+        }
+    ]
+}
